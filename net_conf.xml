@@ -1,0 +1,43 @@
+<config>
+    {{!-- Configuration for a web server --}}
+
+    <constant name="http_port" value="80"/>
+    <constant name="https_port" value="443"/>
+    <constant name="server_address" value="127.001"/>
+    <constant name="max_connections" value="100"/>
+    <constant name="allowed_hosts" value="(localhost 127.0.0.1 example.com)"/>
+
+    <text>
+        NB. Basic Web Server Configuration
+        Server Address: @{server_address}
+    </text>
+
+    <expression>
+        HTTP Port: @{http_port}
+    </expression>
+    
+    <expression>
+        HTTPS Port: @{https_port}
+    </expression>
+
+    <expression>
+        Maximum Connections: @{max_connections}
+    </expression>
+
+    <expression>
+        Allowed Hosts: @{allowed_hosts}
+    </expression>
+
+    <nested>
+      <text>
+        NB. Server Options
+        Keep-Alive timeout: 60
+      </text>
+    </nested>
+
+    <constant name="error_log" value="/var/log/webserver/error.log"/>
+     <text>
+         Error Log Path: @{error_log}
+     </text>
+
+</config>

@@ -1,0 +1,47 @@
+<config>
+  {{!-- Configuration for a data processing system --}}
+  <constant name="input_data_path" value="/data/input/"/>
+  <constant name="output_data_path" value="/data/output/"/>
+  <constant name="log_file" value="/var/log/data_processor.log"/>
+  <constant name="batch_size" value="1000"/>
+  <constant name="data_sources" value="(source1 source2 source3)"/>
+  <constant name="processing_steps" value="(step1 step2 step3)"/>
+
+    <text>
+        NB. Data Processing Configuration
+        Input Data Path: @{input_data_path}
+    </text>
+
+  <expression>
+        Output Data Path: @{output_data_path}
+  </expression>
+
+  <expression>
+        Log File: @{log_file}
+  </expression>
+
+  <expression>
+        Batch Size: @{batch_size}
+  </expression>
+
+    <expression>
+        Data Sources: @{data_sources}
+    </expression>
+    
+    <expression>
+      Processing Steps: @{processing_steps}
+    </expression>
+
+
+  <nested>
+    <text>
+      NB. Advanced options
+      Use cache: True
+    </text>
+  </nested>
+
+    <constant name="retry_attempts" value="3"/>
+    <text>
+       Retry Attempts: @{retry_attempts}
+    </text>
+</config>
